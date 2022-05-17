@@ -24,7 +24,7 @@ string encode_wasm(string inputfilename) {
 
 
 string wrap_js_code(string base64_wasm) {
-	return "const wasm_strbuffer = atob(\""+base64_wasm+"\");\nwasm_codearray = new Uint8Array(wasm_strbuffer.length);\nfor (var i in wasm_strbuffer) wasm_codearray[i] = wasm_strbuffer.charCodeAt(i);";
+	return "const wasm_strbuffer = atob(\""+base64_wasm+"\");\nlet wasm_codearray = new Uint8Array(wasm_strbuffer.length);\nfor (var i in wasm_strbuffer) wasm_codearray[i] = wasm_strbuffer.charCodeAt(i);";
 }
 
 
