@@ -10,13 +10,13 @@ This tool transform .wasm file to base64 encoding wrapped into javascript code, 
 This command prints javascript wrapping code and base64 encoded wasm code
 
 ```
-wasm2js <wasm file>
+wasm2js wasm_file_name
 ```
 
 This command saves javascript wrapping code + base64 encoded wasm code into javascript file
 
 ```
-wasm2js <wasm file> > <js file>
+wasm2js wasm_file_name > js_file_name
 ```
 
 Example
@@ -60,7 +60,7 @@ gives javascript code:
 
 ```
 const wasm_strbuffer = atob(AGFzbQEAAAABhICAgAABYAAAApGAgIAAAQNlbnYJX1o1cHJpbnR2AAADgoCAgAABAASEgICAAAFwAAAFg4CAgAABAAEGgYCAgAAAB5WAgIAAAgZtZW1vcnkCAAhfWjR0ZXN0dgABCoqAgIAAAYSAgIAAABAACw==);
-wasm_codearray = new Uint8Array(wasm_strbuffer.length);
+let wasm_codearray = new Uint8Array(wasm_strbuffer.length);
 for (var i in wasm_strbuffer) wasm_codearray[i] = wasm_strbuffer.charCodeAt(i);
 ```
 
